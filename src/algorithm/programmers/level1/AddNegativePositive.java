@@ -2,7 +2,7 @@ package algorithm.programmers.level1;
 
 import java.util.stream.IntStream;
 
-public class addNegativePositive {
+public class AddNegativePositive {
 
     public static void main(String[] args) {
 
