@@ -3,9 +3,10 @@ package algorithm.programmers.level1;
 import java.util.function.IntFunction;
 
 public class LotteryMaxRankAndMinRank {
+
     public static void main(String[] args) {
-        int[] lottos = { 44, 1, 0, 0, 31, 25 };
-        int[] win_nums = { 31, 10, 45, 1, 6, 19 };
+        int[] lottos = {44, 1, 0, 0, 31, 25};
+        int[] win_nums = {31, 10, 45, 1, 6, 19};
 
         System.out.println(solution(lottos, win_nums));
     }
@@ -28,8 +29,9 @@ public class LotteryMaxRankAndMinRank {
                     break;
                 }
             }
-            if (correct1 == correct2)
+            if (correct1 == correct2) {
                 inCorrect++;
+            }
 
             correct2 = correct1;
         }
@@ -42,8 +44,9 @@ public class LotteryMaxRankAndMinRank {
 
     private static IntFunction<Integer> getLotteryRank() {
         IntFunction<Integer> rank = i -> {
-            if (i == 1 || i == 0)
+            if (i == 1 || i == 0) {
                 i = 6;
+            }
             return 7 - i;
         };
         return rank;
@@ -51,9 +54,7 @@ public class LotteryMaxRankAndMinRank {
 }
 
 /**
- * 음.. 너무 막 풀었나, 변수명 좀 더 생각하고 풀자
- * 성능도 느리다 O(n^2)
- *
- * 성능을 생각하면 조금 더 원시적인 방법으로 명시적 반복
- * 세련된 방법으로 푸려면 람다, FP 공부!!
+ * 음.. 너무 막 풀었나, 변수명 좀 더 생각하고 풀자 성능도 느리다 O(n^2)
+ * <p>
+ * 성능을 생각하면 조금 더 원시적인 방법으로 명시적 반복 세련된 방법으로 푸려면 람다, FP 공부!!
  */

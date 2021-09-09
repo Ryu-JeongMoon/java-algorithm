@@ -1,6 +1,7 @@
 package algorithm.programmers.level1;
 
 public class BasicStringHandling {
+
     public static void main(String[] args) {
         System.out.println(solution("120321"));
     }

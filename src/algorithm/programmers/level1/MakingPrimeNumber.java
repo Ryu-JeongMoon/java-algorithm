@@ -3,7 +3,7 @@ package algorithm.programmers.level1;
 public class MakingPrimeNumber {
 
     public static void main(String[] args) {
-        int[] nums = { 1, 2, 3, 4 };
+        int[] nums = {1, 2, 3, 4};
         System.out.println(solution(nums));
     }
 
@@ -23,8 +23,9 @@ public class MakingPrimeNumber {
                             break;
                         }
                     }
-                    if (temp == 0)
+                    if (temp == 0) {
                         answer++;
+                    }
                 }
             }
         }

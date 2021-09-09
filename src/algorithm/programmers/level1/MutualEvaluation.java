@@ -1,14 +1,16 @@
 package algorithm.programmers.level1;
 
 public class MutualEvaluation {
+
     public static void main(String[] args) {
-        int[][] scores = { { 50, 90 }, { 50, 87 } };
+        int[][] scores = {{50, 90}, {50, 87}};
         System.out.println(solution(scores));
 
-        scores = new int[][]{ { 100, 90, 98, 88, 65 }, { 50, 45, 99, 85, 77 }, { 47, 88, 95, 80, 67 }, { 61, 57, 100, 80, 65 }, { 24, 90, 94, 75, 65 } };
+        scores = new int[][]{{100, 90, 98, 88, 65}, {50, 45, 99, 85, 77}, {47, 88, 95, 80, 67}, {61, 57, 100, 80, 65},
+            {24, 90, 94, 75, 65}};
         System.out.println(solution(scores));
 
-        scores = new int[][]{{70,49,90},{68,50,38},{73,31,100}};
+        scores = new int[][]{{70, 49, 90}, {68, 50, 38}, {73, 31, 100}};
         System.out.println(solution(scores));
 
     }
@@ -27,8 +29,9 @@ public class MutualEvaluation {
                 min = Math.min(scores[j][i], min);
                 sum += scores[j][i];
 
-                if (j == i)
+                if (j == i) {
                     continue;
+                }
 
                 isUnique = scores[i][i] != scores[j][i] ? isUnique : ++isUnique;
             }
@@ -36,8 +39,9 @@ public class MutualEvaluation {
             if ((scores[i][i] == max || scores[i][i] == min) && isUnique == 0) {
                 sum -= scores[i][i];
                 averageScore = sum / (scores.length - 1) * 1.0f;
-            } else
+            } else {
                 averageScore = sum / scores.length * 1.0f;
+            }
 
             calculateGrade(answer, averageScore);
         }
@@ -45,16 +49,17 @@ public class MutualEvaluation {
     }
 
     private static void calculateGrade(StringBuilder answer, float averageScore) {
-        if (averageScore >= 90)
+        if (averageScore >= 90) {
             answer.append("A");
-        else if (averageScore >= 80 && averageScore < 90)
+        } else if (averageScore >= 80 && averageScore < 90) {
             answer.append("B");
-        else if (averageScore >= 70 && averageScore < 80)
+        } else if (averageScore >= 70 && averageScore < 80) {
             answer.append("C");
-        else if (averageScore >= 50 && averageScore < 70)
+        } else if (averageScore >= 50 && averageScore < 70) {
             answer.append("D");
-        else
+        } else {
             answer.append("F");
+        }
     }
 
     /**

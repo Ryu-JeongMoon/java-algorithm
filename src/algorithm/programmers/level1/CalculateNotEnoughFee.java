@@ -13,8 +13,9 @@ public class CalculateNotEnoughFee {
 
         answer = money - (price * count * (count + 1) / 2);
 
-        if (answer >= 0)
+        if (answer >= 0) {
             return 0;
+        }
 
         answer = Math.abs(answer);
 

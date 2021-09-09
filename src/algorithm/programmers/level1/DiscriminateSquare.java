@@ -14,7 +14,7 @@ public class DiscriminateSquare {
         if (squareRoot > answer) {
             answer = -1;
         } else {
-            answer = (answer+1)*(answer+1);
+            answer = (answer + 1) * (answer + 1);
         }
         return answer;
     }

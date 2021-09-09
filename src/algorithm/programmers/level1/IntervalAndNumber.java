@@ -1,6 +1,7 @@
 package algorithm.programmers.level1;
 
 public class IntervalAndNumber {
+
     public static void main(String[] args) {
         System.out.println(solution(4, 3));
     }
