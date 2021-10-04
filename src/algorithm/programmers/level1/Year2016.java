@@ -7,9 +7,6 @@ import java.util.Map;
 public class Year2016 {
 
     public static void main(String[] args) {
-        Map<String, String> dayOfWeekMap = Map.of("0", "FRI", "1", "SAT", "2", "SUN",
-            "3", "MON", "4", "TUE", "5", "WED", "6", "THU");
-
         System.out.println(solution(5, 24));
     }
 
