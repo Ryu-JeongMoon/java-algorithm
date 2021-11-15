@@ -27,8 +27,6 @@ public class Number2 {
             indexMap.put(arr[i], i);
         }
 
-
-
         int answer = -2;
         return answer;
     }
