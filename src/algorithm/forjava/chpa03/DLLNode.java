@@ -1,4 +1,4 @@
-package forjava.chpa03;
+package algorithm.forjava.chpa03;
 
 public class DLLNode {
 

@@ -1,4 +1,4 @@
-package forjava.chap05;
+package algorithm.forjava.chap05;
 
 import java.util.EmptyStackException;
 

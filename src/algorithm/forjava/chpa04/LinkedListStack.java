@@ -1,4 +1,4 @@
-package forjava.chpa04;
+package algorithm.forjava.chpa04;
 
 import java.util.Stack;
 

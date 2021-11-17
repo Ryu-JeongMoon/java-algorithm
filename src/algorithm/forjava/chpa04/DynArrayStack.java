@@ -1,12 +1,12 @@
-package forjava.chpa04;
+package algorithm.forjava.chpa04;
 
-public class ArrayStack {
+public class DynArrayStack {
 
     private int top;
     private int capacity;
     private int[] array;
 
-    public ArrayStack() {
+    public DynArrayStack() {
         capacity = 1;
         array = new int[capacity];
         top = -1;
@@ -26,6 +26,13 @@ public class ArrayStack {
         } else {
             array[++top] = data;
         }
+    }
+
+    public void doubling() {
+        int newArray[] = new int[capacity*2];
+        System.arraycopy(array, 0, newArray, 0, capacity);
+        capacity *= 2;
+        array = newArray;
     }
 
     public int pop() {
