@@ -1,11 +1,11 @@
 package algorithm.forjava.chpa03;
 
-public class ListNode {
+public class LinkedListNode {
 
     private int data;
-    private ListNode next;
+    private LinkedListNode next;
 
-    public ListNode(int data) {
+    public LinkedListNode(int data) {
         this.data = data;
     }
 
@@ -17,17 +17,17 @@ public class ListNode {
         this.data = data;
     }
 
-    public ListNode getNext() {
+    public LinkedListNode getNext() {
         return next;
     }
 
-    public void setNext(ListNode next) {
+    public void setNext(LinkedListNode next) {
         this.next = next;
     }
 
-    public int getLength(ListNode headNode) {
+    public int getLength(LinkedListNode headNode) {
         int length = 0;
-        ListNode currentNode = headNode;
+        LinkedListNode currentNode = headNode;
 
         while (currentNode != null) {
             length++;
@@ -37,7 +37,7 @@ public class ListNode {
         return length;
     }
 
-    public ListNode insertInLinkedList(ListNode headNode, ListNode nodeToInsert, int position) {
+    public LinkedListNode insert(LinkedListNode headNode, LinkedListNode nodeToInsert, int position) {
         if (headNode == null) {
             return nodeToInsert;
         }
@@ -55,7 +55,7 @@ public class ListNode {
             nodeToInsert.setNext(headNode);
             return nodeToInsert;
         } else {
-            ListNode previousNode = headNode;
+            LinkedListNode previousNode = headNode;
             int count = 1;
 
             // previousNode 삽입할 위치 바로 전 노드
@@ -65,14 +65,14 @@ public class ListNode {
             }
 
             // 삽입할 노드 다음 노드가 currentNode
-            ListNode currentNode = previousNode.getNext();
+            LinkedListNode currentNode = previousNode.getNext();
             nodeToInsert.setNext(currentNode);
             previousNode.setNext(nodeToInsert);
         }
         return headNode;
     }
 
-    public ListNode deleteNodeFromLinkedList(ListNode headNode, int position) {
+    public LinkedListNode delete(LinkedListNode headNode, int position) {
         int size = getLength(headNode);
 
         if (position > size || position < 1) {
@@ -81,17 +81,17 @@ public class ListNode {
         }
 
         if (position == 1) {
-            ListNode currentNode = headNode.getNext();
+            LinkedListNode currentNode = headNode.getNext();
             headNode = null;
             return currentNode;
         } else {
-            ListNode previousNode = headNode;
+            LinkedListNode previousNode = headNode;
             int count = 1;
             while (count < position - 1) {
                 previousNode = previousNode.getNext();
                 count++;
             }
-            ListNode currentNode = previousNode.getNext();
+            LinkedListNode currentNode = previousNode.getNext();
             previousNode.setNext(currentNode.getNext());
             currentNode = null;
         }

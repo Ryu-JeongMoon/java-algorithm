@@ -1,12 +1,12 @@
 package algorithm.forjava.chpa03;
 
-public class DLLNode {
+public class DoublyLinkedListNode {
 
     private int data;
-    private DLLNode next;
-    private DLLNode previous;
+    private DoublyLinkedListNode next;
+    private DoublyLinkedListNode previous;
 
-    public DLLNode(int data) {
+    public DoublyLinkedListNode(int data) {
         this.data = data;
     }
 
@@ -18,25 +18,25 @@ public class DLLNode {
         this.data = data;
     }
 
-    public DLLNode getNext() {
+    public DoublyLinkedListNode getNext() {
         return next;
     }
 
-    public void setNext(DLLNode next) {
+    public void setNext(DoublyLinkedListNode next) {
         this.next = next;
     }
 
-    public DLLNode getPrevious() {
+    public DoublyLinkedListNode getPrevious() {
         return previous;
     }
 
-    public void setPrevious(DLLNode previous) {
+    public void setPrevious(DoublyLinkedListNode previous) {
         this.previous = previous;
     }
 
-    public int getLength(DLLNode headNode) {
+    public int getLength(DoublyLinkedListNode headNode) {
         int length = 0;
-        DLLNode currentNode = headNode;
+        DoublyLinkedListNode currentNode = headNode;
 
         while (currentNode != null) {
             length++;
@@ -46,9 +46,10 @@ public class DLLNode {
         return length;
     }
 
-    public DLLNode insertToDLL(DLLNode headNode, DLLNode nodeToInsert, int position) {
-        if (headNode == null)
+    public DoublyLinkedListNode insertToDLL(DoublyLinkedListNode headNode, DoublyLinkedListNode nodeToInsert, int position) {
+        if (headNode == null) {
             return nodeToInsert;
+        }
 
         int size = getLength(headNode);
         if (position > size + 1 || position < 1) {
@@ -61,16 +62,16 @@ public class DLLNode {
             headNode.setPrevious(nodeToInsert);
             return nodeToInsert;
         } else {
-            DLLNode previousNode = headNode;
+            DoublyLinkedListNode previousNode = headNode;
             int count = 1;
             while (count < position - 1) {
                 previousNode = previous.getNext();
                 count++;
             }
-            DLLNode currentNode = previousNode.getNext();
+            DoublyLinkedListNode currentNode = previousNode.getNext();
             nodeToInsert.setNext(currentNode);
 
-            if(currentNode != null) {
+            if (currentNode != null) {
                 currentNode.setPrevious(nodeToInsert);
             }
 
