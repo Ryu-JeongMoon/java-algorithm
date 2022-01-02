@@ -23,13 +23,14 @@ public class DynArrayStack {
     public void push(int data) {
         if (isFull()) {
             System.out.println("Stack Overflow");
+            doubling();
         } else {
             array[++top] = data;
         }
     }
 
     public void doubling() {
-        int newArray[] = new int[capacity*2];
+        int[] newArray = new int[capacity * 2];
         System.arraycopy(array, 0, newArray, 0, capacity);
         capacity *= 2;
         array = newArray;
