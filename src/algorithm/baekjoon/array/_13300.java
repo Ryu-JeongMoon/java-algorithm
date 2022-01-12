@@ -20,9 +20,9 @@ public class _13300 {
     int[][] gradeSexCount = new int[7][2];
 
     for (int i = 0; i < n; i++) {
-      String[] sexAndGrade = br.readLine().split(" ");
-      int sex = Integer.parseInt(sexAndGrade[0]);
-      int grade = Integer.parseInt(sexAndGrade[1]);
+      st = new StringTokenizer(br.readLine());
+      int sex = Integer.parseInt(st.nextToken());
+      int grade = Integer.parseInt(st.nextToken());
       gradeSexCount[grade][sex]++;
     }
 
@@ -30,9 +30,10 @@ public class _13300 {
     for (int[] ints : gradeSexCount) {
       for (int i : ints) {
         if (i != 0) {
-          while (i > 0) {
-            i -= k;
-            room++;
+          if (i % k == 0) {
+            room += (i / k);
+          } else {
+            room += (i / k) + 1;
           }
         }
       }
