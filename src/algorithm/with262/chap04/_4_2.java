@@ -10,7 +10,7 @@ public class _4_2 {
 
     System.out.println("(1L << 1) = " + (1L << 1));
 
-    long x = 32;
+    long x = 323535L;
     System.out.println("(x ^ 3) = " + (x ^ 3));
     System.out.println("(x ^= 3) = " + (x ^= 3));
   }

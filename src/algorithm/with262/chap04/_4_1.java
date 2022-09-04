@@ -8,11 +8,15 @@ import algorithm.with262.TimeUtils;
 public class _4_1 {
 
   public static void main(String[] args) {
-    TimeUtils.printElapsedTime(() -> parityWithBruteForce(15935L));
+    long number = 13141314L;
 
-    TimeUtils.printElapsedTime(() -> parityWithTrick(15935L));
+    TimeUtils.printElapsedTime(() -> parityWithBruteForce(number));
 
-    TimeUtils.printElapsedTime(() -> parityWithMask(15935L));
+    TimeUtils.printElapsedTime(() -> parityWithTrick(number));
+
+//    TimeUtils.printElapsedTime(() -> parityWithMask(number));
+
+    TimeUtils.printElapsedTime(() -> parity(number));
   }
 
   /*
@@ -24,7 +28,9 @@ public class _4_1 {
   static short parityWithBruteForce(long x) {
     short result = 0;
     while (x != 0) {
+      // 최하위 비트와 인자 값에 and 연산 때린 값을 가지고 result에 xor 연산 때려준다
       result ^= (x & 1);
+      // 인자 값은 부호 상관 없이 오른쪽으로 shift 때려준다
       x >>>= 1;
     }
     return result;
@@ -32,7 +38,8 @@ public class _4_1 {
 
   /*
   1의 개수만 확인하면 되니 전체를 돌 필요가 없다는 점에서 착안
-  x가 0이 아닐 때까지 돌되 x의 다음 값을 x &= (x-1)로 1 비트 중 가장 작은 값을 0으로 만든다
+  x가 0이 아닐 때까지 돌되 x의 다음 값을 x &= (x-1) 연산한다
+  1로 세팅된 비트 중 가장 작은 값을 0으로 만든다
   4를 예시로 보면 0110 & 0101 -> 0100
   요렇게 계속 돌면서 1인 비트만 없애나간다
    */
@@ -48,7 +55,7 @@ public class _4_1 {
   static short parityWithMask(long x) {
     final int WORD_SIZE = 16;
     final int BIT_MASK = 0xFFFF;
-    final int[] preComputedParity = { 0, 1, 1, 0 };
+    final int[] preComputedParity = { 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0 };
 
     return (short) (
       preComputedParity[(int) ((x >>> (3 * WORD_SIZE)) & BIT_MASK)] ^
@@ -56,6 +63,16 @@ public class _4_1 {
         preComputedParity[(int) ((x >>> WORD_SIZE) & BIT_MASK)] ^
         preComputedParity[(int) (x & BIT_MASK)]
     );
+  }
+
+  static short parity(long x) {
+    x ^= x >>> 32;
+    x ^= x >>> 16;
+    x ^= x >>> 8;
+    x ^= x >>> 4;
+    x ^= x >>> 2;
+    x ^= x >>> 1;
+    return (short) (x & 0x1);
   }
 }
 
