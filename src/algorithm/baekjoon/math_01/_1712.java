@@ -1,4 +1,4 @@
-package algorithm.baekjoon.math_1;
+package algorithm.baekjoon.math_01;
 
 import java.io.BufferedReader;
 import java.io.IOException;
