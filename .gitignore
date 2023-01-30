@@ -1,4 +1,4 @@
 # Project exclude paths
 /out/
-/src/codetest/
+/src/main/java/codetest/
 *.xml
