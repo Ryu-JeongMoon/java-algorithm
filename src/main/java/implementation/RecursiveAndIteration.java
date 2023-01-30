@@ -1,4 +1,4 @@
-package algorithm.implementation;
+package implementation;
 
 public class RecursiveAndIteration {
 

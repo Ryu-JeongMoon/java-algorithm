@@ -2,3 +2,8 @@
 /out/
 /src/main/java/codetest/
 *.xml
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
