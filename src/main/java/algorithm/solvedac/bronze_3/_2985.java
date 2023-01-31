@@ -9,40 +9,40 @@ import java.io.InputStreamReader;
  */
 public class _2985 {
 
-	public static void main(String[] args) throws IOException {
-		String[] s = new BufferedReader(new InputStreamReader(System.in)).readLine().split(" ");
-		int a = Integer.parseInt(s[0]), b = Integer.parseInt(s[1]), c = Integer.parseInt(s[2]);
-		int biggestIndex = a > b ? a > c ? 0 : 2 : b > c ? 1 : 2;
-		switch (biggestIndex) {
-			case 0:
-				if (b + c == a) {
-					System.out.printf("%d=%d+%d", a, b, c);
-				} else if (b * c == a) {
-					System.out.printf("%d=%d*%d", a, b, c);
-				} else if (b - c == a) {
-					System.out.printf("%d=%d-%d", a, b, c);
-				} else {
-					System.out.printf("%d=%d/%d", a, b, c);
-				}
-				break;
-			case 1:
-				if (b - c == a) {
-					System.out.printf("%d=%d-%d", a, b, c);
-				} else {
-					System.out.printf("%d=%d/%d", a, b, c);
-				}
-				break;
-			case 2:
-				if (a + b == c) {
-					System.out.printf("%d+%d=%d", a, b, c);
-				} else {
-					System.out.printf("%d*%d=%d", a, b, c);
-				}
-				break;
-			default:
-				break;
-		}
-	}
+  public static void main(String[] args) throws IOException {
+    String[] s = new BufferedReader(new InputStreamReader(System.in)).readLine().split(" ");
+    int a = Integer.parseInt(s[0]), b = Integer.parseInt(s[1]), c = Integer.parseInt(s[2]);
+    int biggestIndex = a > b ? a > c ? 0 : 2 : b > c ? 1 : 2;
+    switch (biggestIndex) {
+      case 0:
+        if (b + c == a) {
+          System.out.printf("%d=%d+%d", a, b, c);
+        } else if (b * c == a) {
+          System.out.printf("%d=%d*%d", a, b, c);
+        } else if (b - c == a) {
+          System.out.printf("%d=%d-%d", a, b, c);
+        } else {
+          System.out.printf("%d=%d/%d", a, b, c);
+        }
+        break;
+      case 1:
+        if (b - c == a) {
+          System.out.printf("%d=%d-%d", a, b, c);
+        } else {
+          System.out.printf("%d=%d/%d", a, b, c);
+        }
+        break;
+      case 2:
+        if (a + b == c) {
+          System.out.printf("%d+%d=%d", a, b, c);
+        } else {
+          System.out.printf("%d*%d=%d", a, b, c);
+        }
+        break;
+      default:
+        break;
+    }
+  }
 }
 
 /*

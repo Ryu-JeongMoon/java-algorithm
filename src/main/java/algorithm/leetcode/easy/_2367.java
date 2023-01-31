@@ -6,8 +6,8 @@ package algorithm.leetcode.easy;
 public class _2367 {
 
   public static void main(String[] args) {
-    System.out.println(arithmeticTriplets(new int[]{ 0, 1, 4, 6, 7, 10 }, 3));
-    System.out.println(arithmeticTriplets(new int[]{ 4, 5, 6, 7, 8, 9 }, 2));
+    System.out.println(arithmeticTriplets(new int[] { 0, 1, 4, 6, 7, 10 }, 3));
+    System.out.println(arithmeticTriplets(new int[] { 4, 5, 6, 7, 8, 9 }, 2));
   }
 
   public static int arithmeticTriplets(int[] nums, int diff) {

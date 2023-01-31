@@ -17,7 +17,7 @@ public class _2577 {
       sum *= Integer.parseInt(br.readLine());
     }
 
-    String numbers = sum + "";
+    String numbers = String.valueOf(sum);
     char[] chars = numbers.toCharArray();
 
     int[] ints = new int[10];

@@ -10,8 +10,8 @@ import java.io.InputStreamReader;
 public class _2908 {
 
   public static void main(String[] args) throws IOException {
-//    sol_1();
-//    sol_2();
+    //    sol_1();
+    //    sol_2();
     sol_3();
   }
 
@@ -41,7 +41,7 @@ public class _2908 {
   private static void sol_3() throws IOException {
     StringBuilder sb = new StringBuilder();
     int i = 0;
-    while(true) {
+    while (true) {
       int ch = System.in.read();
       if (ch == '\n') {
         i = Math.max(i, Integer.parseInt(sb.reverse().toString()));

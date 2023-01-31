@@ -21,7 +21,7 @@ public class _2547 {
       for (int j = 0; j < t; j++) {
         sum = sum.add(new BigInteger(br.readLine()));
       }
-      BigInteger[] value = sum.divideAndRemainder(new BigInteger(t + ""));
+      BigInteger[] value = sum.divideAndRemainder(new BigInteger(String.valueOf(t)));
       if (value[1].equals(BigInteger.ZERO))
         sb.append("YES\n");
       else

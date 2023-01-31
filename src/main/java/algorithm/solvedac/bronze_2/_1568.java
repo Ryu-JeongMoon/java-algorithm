@@ -9,18 +9,18 @@ import java.io.InputStreamReader;
  */
 public class _1568 {
 
-	public static void main(String[] args) throws IOException {
-		int n = Integer.parseInt(new BufferedReader(new InputStreamReader(System.in)).readLine());
-		int counter = 1, time = 0;
-		while (n > 0) {
-			if (n < counter) {
-				counter = 1;
-			}
-			n -= counter++;
-			++time;
-		}
-		System.out.println(time);
-	}
+  public static void main(String[] args) throws IOException {
+    int n = Integer.parseInt(new BufferedReader(new InputStreamReader(System.in)).readLine());
+    int counter = 1, time = 0;
+    while (n > 0) {
+      if (n < counter) {
+        counter = 1;
+      }
+      n -= counter++;
+      ++time;
+    }
+    System.out.println(time);
+  }
 }
 
 /*

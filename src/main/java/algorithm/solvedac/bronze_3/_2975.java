@@ -9,38 +9,38 @@ import java.io.InputStreamReader;
  */
 public class _2975 {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		while (true) {
-			String line = br.readLine();
-			if (line.equals("0 W 0")) {
-				break;
-			}
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    StringBuilder sb = new StringBuilder();
+    while (true) {
+      String line = br.readLine();
+      if (line.equals("0 W 0")) {
+        break;
+      }
 
-			String[] s = line.split(" ");
-			int balance = Integer.parseInt(s[0]);
-			int amount = Integer.parseInt(s[2]);
+      String[] s = line.split(" ");
+      int balance = Integer.parseInt(s[0]);
+      int amount = Integer.parseInt(s[2]);
 
-			switch (s[1]) {
-				case "W":
-					balance -= amount;
-					break;
-				case "D":
-					balance += amount;
-					break;
-				default:
-					break;
-			}
+      switch (s[1]) {
+        case "W":
+          balance -= amount;
+          break;
+        case "D":
+          balance += amount;
+          break;
+        default:
+          break;
+      }
 
-			if (balance < -200) {
-				sb.append("Not allowed").append("\n");
-			} else {
-				sb.append(balance).append("\n");
-			}
-		}
-		System.out.print(sb);
-	}
+      if (balance < -200) {
+        sb.append("Not allowed").append("\n");
+      } else {
+        sb.append(balance).append("\n");
+      }
+    }
+    System.out.print(sb);
+  }
 }
 
 /*

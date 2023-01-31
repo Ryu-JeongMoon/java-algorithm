@@ -29,7 +29,7 @@ public class _10845 {
           bw.newLine();
           break;
         case "size":
-          bw.write(characters.size() + "");
+          bw.write(String.valueOf(characters.size()));
           bw.newLine();
           break;
         case "empty":

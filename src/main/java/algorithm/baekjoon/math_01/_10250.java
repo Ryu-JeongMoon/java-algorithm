@@ -28,8 +28,8 @@ public class _10250 {
         room--;
       }
 
-      bw.write("" + floor);
-      bw.write(room < 10 ? 0 + "" + room : "" + room);
+      bw.write(String.valueOf(floor));
+      bw.write(room < 10 ? 0 + String.valueOf(room) : String.valueOf(room));
       bw.newLine();
     }
     bw.flush();

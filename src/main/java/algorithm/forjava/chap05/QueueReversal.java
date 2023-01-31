@@ -9,29 +9,29 @@ import java.util.Stack;
  */
 public class QueueReversal {
 
-    public static void main(String[] args) {
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(1);
-        queue.offer(5);
-        queue.offer(9);
+  public static void main(String[] args) {
+    Queue<Integer> queue = new LinkedList<>();
+    queue.offer(1);
+    queue.offer(5);
+    queue.offer(9);
 
-        Queue<Integer> reverseQueue = reverseQueue(queue);
-        System.out.println("reverseQueue = " + reverseQueue);
+    Queue<Integer> reverseQueue = reverseQueue(queue);
+    System.out.println("reverseQueue = " + reverseQueue);
+  }
+
+  private static Queue<Integer> reverseQueue(Queue<Integer> queue) {
+    Stack<Integer> stack = new Stack<>();
+
+    while (!queue.isEmpty()) {
+      Integer poll = queue.poll();
+      stack.push(poll);
     }
 
-    private static Queue<Integer> reverseQueue(Queue<Integer> queue) {
-        Stack<Integer> stack = new Stack<>();
-
-        while (!queue.isEmpty()) {
-            Integer poll = queue.poll();
-            stack.push(poll);
-        }
-
-        while (!stack.isEmpty()) {
-            Integer pop = stack.pop();
-            queue.offer(pop);
-        }
-
-        return queue;
+    while (!stack.isEmpty()) {
+      Integer pop = stack.pop();
+      queue.offer(pop);
     }
+
+    return queue;
+  }
 }

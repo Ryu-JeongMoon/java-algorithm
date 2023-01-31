@@ -9,17 +9,17 @@ import java.io.InputStreamReader;
  */
 public class _1075 {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		long n = Long.parseLong(br.readLine()), f = Long.parseLong(br.readLine());
-		long result = getMinimum(n % 100 + (f - n % f), f);
-		result = result == 0 ? 0 : (result + f) % 100;
-		System.out.printf("%02d", result);
-	}
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    long n = Long.parseLong(br.readLine()), f = Long.parseLong(br.readLine());
+    long result = getMinimum(n % 100 + (f - n % f), f);
+    result = result == 0 ? 0 : (result + f) % 100;
+    System.out.printf("%02d", result);
+  }
 
-	private static long getMinimum(long result, long f) {
-		return result <= 0 ? result : getMinimum(result - f, f);
-	}
+  private static long getMinimum(long result, long f) {
+    return result <= 0 ? result : getMinimum(result - f, f);
+  }
 }
 
 /*

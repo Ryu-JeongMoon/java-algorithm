@@ -10,28 +10,28 @@ import java.math.BigInteger;
  */
 public class _1247 {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		int t = 3;
-		while (t-- > 0) {
-			BigInteger sum = BigInteger.ZERO;
-			int n = Integer.parseInt(br.readLine());
-			while (n-- > 0) {
-				long value = Long.parseLong(br.readLine());
-				sum = sum.add(BigInteger.valueOf(value));
-			}
-			int i = sum.compareTo(BigInteger.ZERO);
-			if (i == 0) {
-				sb.append("0").append("\n");
-			} else if (i > 0) {
-				sb.append("+").append("\n");
-			} else {
-				sb.append("-").append("\n");
-			}
-		}
-		System.out.println(sb);
-	}
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    StringBuilder sb = new StringBuilder();
+    int t = 3;
+    while (t-- > 0) {
+      BigInteger sum = BigInteger.ZERO;
+      int n = Integer.parseInt(br.readLine());
+      while (n-- > 0) {
+        long value = Long.parseLong(br.readLine());
+        sum = sum.add(BigInteger.valueOf(value));
+      }
+      int i = sum.compareTo(BigInteger.ZERO);
+      if (i == 0) {
+        sb.append("0").append("\n");
+      } else if (i > 0) {
+        sb.append("+").append("\n");
+      } else {
+        sb.append("-").append("\n");
+      }
+    }
+    System.out.println(sb);
+  }
 }
 
 /*

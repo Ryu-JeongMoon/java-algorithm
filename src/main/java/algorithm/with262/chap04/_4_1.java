@@ -14,7 +14,7 @@ public class _4_1 {
 
     TimeUtils.printElapsedTime(() -> parityWithTrick(number));
 
-//    TimeUtils.printElapsedTime(() -> parityWithMask(number));
+    //    TimeUtils.printElapsedTime(() -> parityWithMask(number));
 
     TimeUtils.printElapsedTime(() -> parity(number));
   }

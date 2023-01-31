@@ -7,37 +7,37 @@ import java.util.Stack;
  */
 public class StackReversal {
 
-    public static void main(String[] args) {
-        Stack<Integer> integers = new Stack<>();
-        integers.push(1);
-        integers.push(2);
-        integers.push(3);
+  public static void main(String[] args) {
+    Stack<Integer> integers = new Stack<>();
+    integers.push(1);
+    integers.push(2);
+    integers.push(3);
 
-        reverseStack(integers);
+    reverseStack(integers);
 
-        System.out.println("integers = " + integers);
+    System.out.println("integers = " + integers);
+  }
+
+  public static void reverseStack(Stack<Integer> stack) {
+    if (stack.isEmpty()) {
+      return;
     }
 
-    public static void reverseStack(Stack<Integer> stack) {
-        if (stack.isEmpty()) {
-            return;
-        }
+    Integer temp = stack.pop();
+    reverseStack(stack);
+    insertAtBottom(stack, temp);
+  }
 
-        Integer temp = stack.pop();
-        reverseStack(stack);
-        insertAtBottom(stack, temp);
+  private static void insertAtBottom(Stack<Integer> stack, int data) {
+    if (stack.isEmpty()) {
+      stack.push(data);
+      return;
     }
 
-    private static void insertAtBottom(Stack<Integer> stack, int data) {
-        if (stack.isEmpty()) {
-            stack.push(data);
-            return;
-        }
-
-        Integer temp = stack.pop();
-        insertAtBottom(stack, data);
-        stack.push(temp);
-    }
+    Integer temp = stack.pop();
+    insertAtBottom(stack, data);
+    stack.push(temp);
+  }
 }
 
 /*

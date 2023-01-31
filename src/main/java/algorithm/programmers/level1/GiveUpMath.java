@@ -7,62 +7,62 @@ import java.util.TreeSet;
 
 public class GiveUpMath {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        int[] answers = {1, 2, 3, 4, 5};
-        System.out.println(Arrays.toString(solution(answers)));
+    int[] answers = { 1, 2, 3, 4, 5 };
+    System.out.println(Arrays.toString(solution(answers)));
 
-        TreeSet<Integer> integers = new TreeSet<>();
-        integers.add(1);
-        integers.add(99);
-        integers.add(3);
-        integers.add(3);
-        integers.add(3);
-        integers.add(83);
-        integers.add(5);
+    TreeSet<Integer> integers = new TreeSet<>();
+    integers.add(1);
+    integers.add(99);
+    integers.add(3);
+    integers.add(3);
+    integers.add(3);
+    integers.add(83);
+    integers.add(5);
 
-        System.out.println("integers = " + integers);
+    System.out.println("integers = " + integers);
+  }
+
+  public static int[] solution(int[] answers) {
+
+    int[] studentA = { 1, 2, 3, 4, 5 };
+    int[] studentB = { 2, 1, 2, 3, 2, 4, 2, 5 };
+    int[] studentC = { 3, 3, 1, 1, 2, 2, 4, 4, 5, 5 };
+    int resultOfA = 0, resultOfB = 0, resultOfC = 0;
+
+    for (int i = 0; i < answers.length; i++) {
+      if (answers[i] == studentA[i % 5]) {
+        resultOfA++;
+      }
+      if (answers[i] == studentB[i % 8]) {
+        resultOfB++;
+      }
+      if (answers[i] == studentC[i % 10]) {
+        resultOfC++;
+      }
     }
 
-    public static int[] solution(int[] answers) {
+    List<Integer> scorers = new ArrayList<>();
 
-        int[] studentA = {1, 2, 3, 4, 5};
-        int[] studentB = {2, 1, 2, 3, 2, 4, 2, 5};
-        int[] studentC = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
-        int resultOfA = 0, resultOfB = 0, resultOfC = 0;
-
-        for (int i = 0; i < answers.length; i++) {
-            if (answers[i] == studentA[i % 5]) {
-                resultOfA++;
-            }
-            if (answers[i] == studentB[i % 8]) {
-                resultOfB++;
-            }
-            if (answers[i] == studentC[i % 10]) {
-                resultOfC++;
-            }
-        }
-
-        List<Integer> scorers = new ArrayList<>();
-
-        TreeSet<Integer> integers = new TreeSet<>(List.of(resultOfA, resultOfB, resultOfC));
-        Integer maxScore = integers.pollLast();
-        if (resultOfA == maxScore) {
-            scorers.add(1);
-        }
-        if (resultOfB == maxScore) {
-            scorers.add(2);
-        }
-        if (resultOfC == maxScore) {
-            scorers.add(3);
-        }
-
-        int[] ints = new int[scorers.size()];
-        for (int i = 0; i < scorers.size(); i++) {
-            ints[i] = scorers.get(i);
-        }
-        return ints;
+    TreeSet<Integer> integers = new TreeSet<>(List.of(resultOfA, resultOfB, resultOfC));
+    Integer maxScore = integers.pollLast();
+    if (resultOfA == maxScore) {
+      scorers.add(1);
     }
+    if (resultOfB == maxScore) {
+      scorers.add(2);
+    }
+    if (resultOfC == maxScore) {
+      scorers.add(3);
+    }
+
+    int[] ints = new int[scorers.size()];
+    for (int i = 0; i < scorers.size(); i++) {
+      ints[i] = scorers.get(i);
+    }
+    return ints;
+  }
 }
 
 /*

@@ -17,8 +17,8 @@ public class _1406 {
   private static final Character MOVE_LEFT = 'L';
   private static final Character MOVE_RIGHT = 'D';
   private static final Character DELETE_LEFT = 'B';
-  private static Stack<Character> temporary = new Stack<>();
-  private static Stack<Character> editor = new Stack<>();
+  private static final Stack<Character> temporary = new Stack<>();
+  private static final Stack<Character> editor = new Stack<>();
 
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

@@ -2,25 +2,25 @@ package algorithm.programmers.level1;
 
 public class CalculateNotEnoughFee {
 
-    public static void main(String[] args) {
-        long fee = solution(2500, 100000, 322);
-        System.out.println("fee = " + fee);
-        System.out.println(Math.abs(-129907500));
+  public static void main(String[] args) {
+    long fee = solution(2500, 100000, 322);
+    System.out.println("fee = " + fee);
+    System.out.println(Math.abs(-129907500));
+  }
+
+  public static long solution(long price, long money, long count) {
+    long answer = -1;
+
+    answer = money - (price * count * (count + 1) / 2);
+
+    if (answer >= 0) {
+      return 0;
     }
 
-    public static long solution(long price, long money, long count) {
-        long answer = -1;
+    answer = Math.abs(answer);
 
-        answer = money - (price * count * (count + 1) / 2);
-
-        if (answer >= 0) {
-            return 0;
-        }
-
-        answer = Math.abs(answer);
-
-        return answer;
-    }
+    return answer;
+  }
 }
 
 // 부족한 금액 계산하기

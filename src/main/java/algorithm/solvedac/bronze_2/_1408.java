@@ -9,18 +9,18 @@ import java.io.InputStreamReader;
  */
 public class _1408 {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String[] current = br.readLine().split(":"), mission = br.readLine().split(":");
-		int currentInSeconds = Integer.parseInt(current[0]) * 3600 + Integer.parseInt(current[1]) * 60 + Integer.parseInt(current[2]);
-		int missionInSeconds = Integer.parseInt(mission[0]) * 3600 + Integer.parseInt(mission[1]) * 60 + Integer.parseInt(mission[2]);
-		if (currentInSeconds > missionInSeconds) {
-			missionInSeconds += 24 * 3600;
-		}
-		int result = Math.abs(currentInSeconds - missionInSeconds);
-		int hour = result / 3600, minute = (result % 3600) / 60, second = result % 60;
-		System.out.printf("%02d:%02d:%02d", hour, minute, second);
-	}
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    String[] current = br.readLine().split(":"), mission = br.readLine().split(":");
+    int currentInSeconds = Integer.parseInt(current[0]) * 3600 + Integer.parseInt(current[1]) * 60 + Integer.parseInt(current[2]);
+    int missionInSeconds = Integer.parseInt(mission[0]) * 3600 + Integer.parseInt(mission[1]) * 60 + Integer.parseInt(mission[2]);
+    if (currentInSeconds > missionInSeconds) {
+      missionInSeconds += 24 * 3600;
+    }
+    int result = Math.abs(currentInSeconds - missionInSeconds);
+    int hour = result / 3600, minute = (result % 3600) / 60, second = result % 60;
+    System.out.printf("%02d:%02d:%02d", hour, minute, second);
+  }
 }
 
 /*

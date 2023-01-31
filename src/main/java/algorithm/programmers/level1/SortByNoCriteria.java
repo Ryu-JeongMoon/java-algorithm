@@ -6,16 +6,16 @@ import java.util.Comparator;
 public class SortByNoCriteria {
 
   public static void main(String[] args) {
-    String[] strings = new String[]{"sun", "bed", "car"};
+    String[] strings = new String[] { "sun", "bed", "car" };
     System.out.println(Arrays.toString(solution(strings, 1)));
 
-    String[] strings2 = new String[]{"abce", "abcd", "cdx"};
+    String[] strings2 = new String[] { "abce", "abcd", "cdx" };
     System.out.println(Arrays.toString(solution(strings2, 2)));
 
-    String[] strings3 = new String[]{"ae", "be", "ce", "ae"};
+    String[] strings3 = new String[] { "ae", "be", "ce", "ae" };
     System.out.println(Arrays.toString(solution(strings3, 1)));
 
-    String[] strings4 = new String[]{"abzcd", "cdzab", "abzfg", "abzaa", "abzbb", "bbzaa"};
+    String[] strings4 = new String[] { "abzcd", "cdzab", "abzfg", "abzaa", "abzbb", "bbzaa" };
     System.out.println(Arrays.toString(solution(strings4, 2)));
   }
 

@@ -39,7 +39,7 @@ public class _136 {
   // 	6 ms	50.5 MB
   public static int singleNumber2(int[] nums) {
     int result = 0;
-    for(int i : nums) {
+    for (int i : nums) {
       result ^= i;
     }
     return result;

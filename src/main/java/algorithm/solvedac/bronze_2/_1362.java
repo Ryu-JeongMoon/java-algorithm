@@ -11,42 +11,42 @@ import java.io.OutputStreamWriter;
  */
 public class _1362 {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		int o = Integer.MAX_VALUE, w = Integer.MAX_VALUE, index = 1;
-		String happy = ":-)", sad = ":-(", dead = "RIP", line;
-		while (!(line = br.readLine()).equals("0 0")) {
-			String[] input = line.split(" ");
-			String command = input[0], value = input[1];
-			if (w <= 0 && (command.equals("E") || command.equals("F"))) {
-				continue;
-			}
-			switch (command) {
-				case "E":
-					w -= Integer.parseInt(value);
-					break;
-				case "F":
-					w += Integer.parseInt(value);
-					break;
-				case "#":
-					if (w > o / 2 && w < o * 2) {
-						bw.write(index++ + " " + happy + "\n");
-					} else if (w <= 0) {
-						bw.write(index++ + " " + dead + "\n");
-					} else {
-						bw.write(index++ + " " + sad + "\n");
-					}
-					break;
-				default:
-					o = Integer.parseInt(command);
-					w = Integer.parseInt(value);
-					break;
-			}
-		}
-		bw.flush();
-		bw.close();
-	}
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    int o = Integer.MAX_VALUE, w = Integer.MAX_VALUE, index = 1;
+    String happy = ":-)", sad = ":-(", dead = "RIP", line;
+    while (!(line = br.readLine()).equals("0 0")) {
+      String[] input = line.split(" ");
+      String command = input[0], value = input[1];
+      if (w <= 0 && (command.equals("E") || command.equals("F"))) {
+        continue;
+      }
+      switch (command) {
+        case "E":
+          w -= Integer.parseInt(value);
+          break;
+        case "F":
+          w += Integer.parseInt(value);
+          break;
+        case "#":
+          if (w > o / 2 && w < o * 2) {
+            bw.write(index++ + " " + happy + "\n");
+          } else if (w <= 0) {
+            bw.write(index++ + " " + dead + "\n");
+          } else {
+            bw.write(index++ + " " + sad + "\n");
+          }
+          break;
+        default:
+          o = Integer.parseInt(command);
+          w = Integer.parseInt(value);
+          break;
+      }
+    }
+    bw.flush();
+    bw.close();
+  }
 }
 
 /*

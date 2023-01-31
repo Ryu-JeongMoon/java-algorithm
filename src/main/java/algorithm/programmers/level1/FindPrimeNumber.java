@@ -2,9 +2,9 @@ package algorithm.programmers.level1;
 
 public class FindPrimeNumber {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-    }
+  }
 }
 
 /**

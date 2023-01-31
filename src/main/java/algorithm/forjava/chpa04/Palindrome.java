@@ -7,43 +7,43 @@ import java.util.Stack;
  */
 public class Palindrome {
 
-    public static void main(String[] args) {
-        System.out.println(isPalindrome("ababaXababa"));
-        System.out.println(isPalindromeByStack("cdaababaXababaadc"));
+  public static void main(String[] args) {
+    System.out.println(isPalindrome("ababaXababa"));
+    System.out.println(isPalindromeByStack("cdaababaXababaadc"));
+  }
+
+  static boolean isPalindrome(String input) {
+    char[] chars = input.toCharArray();
+    int i = 0, j = chars.length - 1;
+
+    while (i < j && chars[i++] == chars[j--]) {
+      System.out.printf("working %d %d\n", i, j);
     }
 
-    static boolean isPalindrome(String input) {
-        char[] chars = input.toCharArray();
-        int i = 0, j = chars.length - 1;
+    if (i < j) {
+      System.out.println("Not a Palindrome");
+      return false;
+    } else {
+      System.out.println("Palindrome");
+      return true;
+    }
+  }
 
-        while (i < j && chars[i++] == chars[j--]) {
-            System.out.printf("working %d %d\n", i, j);
-        }
+  static boolean isPalindromeByStack(String input) {
+    char[] chars = input.toCharArray();
+    int i = 0, j = (chars.length - 1) / 2;
+    Stack<Character> stack = new Stack<>();
 
-        if (i < j) {
-            System.out.println("Not a Palindrome");
-            return false;
-        } else {
-            System.out.println("Palindrome");
-            return true;
-        }
+    while (chars[i] != 'X') {
+      stack.push(chars[i++]);
     }
 
-    static boolean isPalindromeByStack(String input) {
-        char[] chars = input.toCharArray();
-        int i = 0, j = (chars.length - 1) / 2;
-        Stack<Character> stack = new Stack<>();
-
-        while (chars[i] != 'X') {
-            stack.push(chars[i++]);
-        }
-
-        while (chars[j] != 'X') {
-            if (stack.pop() != chars[j++]) {
-                return false;
-            }
-        }
-
-        return true;
+    while (chars[j] != 'X') {
+      if (stack.pop() != chars[j++]) {
+        return false;
+      }
     }
+
+    return true;
+  }
 }

@@ -13,45 +13,45 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class _2712 {
 
-	private static final Map<String, Pair> VALUE_PER_UNITS = new ConcurrentHashMap<>() {{
-		put("kg", new Pair("lb", 2.2046));
-		put("lb", new Pair("kg", 0.4536));
-		put("l", new Pair("g", 0.2642));
-		put("g", new Pair("l", 3.7854));
-	}};
+  private static final Map<String, Pair> VALUE_PER_UNITS = new ConcurrentHashMap<>() {{
+    put("kg", new Pair("lb", 2.2046));
+    put("lb", new Pair("kg", 0.4536));
+    put("l", new Pair("g", 0.2642));
+    put("g", new Pair("l", 3.7854));
+  }};
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		int t = Integer.parseInt(br.readLine());
-		while (--t >= 0) {
-			String[] numberAndUnit = br.readLine().split(" ");
-			double number = Double.parseDouble(numberAndUnit[0]);
-			Pair pair = VALUE_PER_UNITS.get(numberAndUnit[1]);
-			bw.write(String.format("%.4f %s\n", number * pair.getValue(), pair.getUnit()));
-		}
-		bw.flush();
-		bw.close();
-	}
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    int t = Integer.parseInt(br.readLine());
+    while (--t >= 0) {
+      String[] numberAndUnit = br.readLine().split(" ");
+      double number = Double.parseDouble(numberAndUnit[0]);
+      Pair pair = VALUE_PER_UNITS.get(numberAndUnit[1]);
+      bw.write(String.format("%.4f %s\n", number * pair.getValue(), pair.getUnit()));
+    }
+    bw.flush();
+    bw.close();
+  }
 
-	private static class Pair {
+  private static class Pair {
 
-		private final String unit;
-		private final Double value;
+    private final String unit;
+    private final Double value;
 
-		public Pair(String unit, Double value) {
-			this.unit = unit;
-			this.value = value;
-		}
+    public Pair(String unit, Double value) {
+      this.unit = unit;
+      this.value = value;
+    }
 
-		public String getUnit() {
-			return unit;
-		}
+    public String getUnit() {
+      return unit;
+    }
 
-		public Double getValue() {
-			return value;
-		}
-	}
+    public Double getValue() {
+      return value;
+    }
+  }
 }
 
 /*

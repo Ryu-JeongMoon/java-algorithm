@@ -4,53 +4,53 @@ import java.util.function.IntFunction;
 
 public class LotteryMaxRankAndMinRank {
 
-    public static void main(String[] args) {
-        int[] lottos = {44, 1, 0, 0, 31, 25};
-        int[] win_nums = {31, 10, 45, 1, 6, 19};
+  public static void main(String[] args) {
+    int[] lottos = { 44, 1, 0, 0, 31, 25 };
+    int[] win_nums = { 31, 10, 45, 1, 6, 19 };
 
-        System.out.println(solution(lottos, win_nums));
-    }
+    System.out.println(solution(lottos, win_nums));
+  }
 
-    public static int[] solution(int[] lottos, int[] win_nums) {
-        int[] answer = new int[2];
+  public static int[] solution(int[] lottos, int[] win_nums) {
+    int[] answer = new int[2];
 
-        int correct1 = 0;
-        int correct2 = 0;
-        int zeroNumber = 0;
-        int inCorrect = 0;
+    int correct1 = 0;
+    int correct2 = 0;
+    int zeroNumber = 0;
+    int inCorrect = 0;
 
-        for (int i = 0; i < lottos.length; i++) {
-            for (int j = 0; j < win_nums.length; j++) {
-                if (lottos[i] == 0) {
-                    zeroNumber++;
-                    break;
-                } else if (lottos[i] == win_nums[j]) {
-                    correct1++;
-                    break;
-                }
-            }
-            if (correct1 == correct2) {
-                inCorrect++;
-            }
-
-            correct2 = correct1;
+    for (int i = 0; i < lottos.length; i++) {
+      for (int j = 0; j < win_nums.length; j++) {
+        if (lottos[i] == 0) {
+          zeroNumber++;
+          break;
+        } else if (lottos[i] == win_nums[j]) {
+          correct1++;
+          break;
         }
+      }
+      if (correct1 == correct2) {
+        inCorrect++;
+      }
 
-        answer[0] = getLotteryRank().apply(6 - inCorrect + zeroNumber);
-        answer[1] = getLotteryRank().apply(correct1);
-
-        return answer;
+      correct2 = correct1;
     }
 
-    private static IntFunction<Integer> getLotteryRank() {
-        IntFunction<Integer> rank = i -> {
-            if (i == 1 || i == 0) {
-                i = 6;
-            }
-            return 7 - i;
-        };
-        return rank;
-    }
+    answer[0] = getLotteryRank().apply(6 - inCorrect + zeroNumber);
+    answer[1] = getLotteryRank().apply(correct1);
+
+    return answer;
+  }
+
+  private static IntFunction<Integer> getLotteryRank() {
+    IntFunction<Integer> rank = i -> {
+      if (i == 1 || i == 0) {
+        i = 6;
+      }
+      return 7 - i;
+    };
+    return rank;
+  }
 }
 
 /**

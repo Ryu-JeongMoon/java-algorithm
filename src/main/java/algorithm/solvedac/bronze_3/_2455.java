@@ -9,19 +9,19 @@ import java.io.InputStreamReader;
  */
 public class _2455 {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int sum = 0, max = 0;
-		for (int i = 0; i < 3; i++) {
-			String[] s = br.readLine().split(" ");
-			sum += (Integer.parseInt(s[1]) - Integer.parseInt(s[0]));
-			if (max < sum) {
-				max = sum;
-			}
-		}
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int sum = 0, max = 0;
+    for (int i = 0; i < 3; i++) {
+      String[] s = br.readLine().split(" ");
+      sum += (Integer.parseInt(s[1]) - Integer.parseInt(s[0]));
+      if (max < sum) {
+        max = sum;
+      }
+    }
 
-		System.out.println(max);
-	}
+    System.out.println(max);
+  }
 }
 
 /*

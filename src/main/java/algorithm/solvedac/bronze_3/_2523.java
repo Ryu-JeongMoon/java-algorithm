@@ -8,14 +8,14 @@ import java.util.Scanner;
  */
 public class _2523 {
 
-	public static void main(String[] args) throws IOException {
-		int n = new Scanner(System.in).nextInt();
-		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < 2 * n - 1; i++) {
-			sb.append("*".repeat(Math.max(0, n - Math.abs(n - 1 - i)))).append("\n");
-		}
-		System.out.println(sb);
-	}
+  public static void main(String[] args) throws IOException {
+    int n = new Scanner(System.in).nextInt();
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < 2 * n - 1; i++) {
+      sb.append("*".repeat(Math.max(0, n - Math.abs(n - 1 - i)))).append("\n");
+    }
+    System.out.println(sb);
+  }
 }
 
 /*
