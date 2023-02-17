@@ -64,8 +64,8 @@ LoopUnrollingCounter.longStride1  thrpt   10   7008.386 ±  346.639  ops/s
 
 jdk11 - graalvm
 Benchmark                          Mode  Cnt     Score     Error  Units
-LoopUnrollingCounter.intStride1   thrpt   10  14158.090 ± 1832.970  ops/s
-LoopUnrollingCounter.longStride1  thrpt   10   7008.386 ±  346.639  ops/s
+LoopUnrollingCounter.intStride1   thrpt   10  14765.411 ± 593.933  ops/s
+LoopUnrollingCounter.longStride1  thrpt   10   8033.640 ± 249.375  ops/s
 
 jdk17
 Benchmark                          Mode  Cnt      Score     Error  Units
