@@ -13,22 +13,22 @@ import java.time.format.DateTimeFormatter;
  */
 public class _1340 {
 
-	public static void main(String[] args) throws IOException, ParseException {
-		String source = new BufferedReader(new InputStreamReader(System.in)).readLine();
-		LocalDateTime result = LocalDateTime.parse(source, DateTimeFormatter.ofPattern("MMMM dd, yyyy HH:mm"));
+  public static void main(String[] args) throws IOException, ParseException {
+    String source = new BufferedReader(new InputStreamReader(System.in)).readLine();
+    LocalDateTime result = LocalDateTime.parse(source, DateTimeFormatter.ofPattern("MMMM dd, yyyy HH:mm"));
 
-		double dayTimeInMillis = 24 * 60 * 60 * 1000;
-		double currentTimeInMillis =
-			result.toInstant(ZoneOffset.UTC).toEpochMilli() - LocalDateTime.of(result.getYear(), 1, 1, 0, 0).toInstant(ZoneOffset.UTC).toEpochMilli();
-		double l = isLeapYear(result.getYear())
-			? currentTimeInMillis / (dayTimeInMillis * 366)
-			: currentTimeInMillis / (dayTimeInMillis * 365);
-		System.out.printf("%.9f", l * 100);
-	}
+    double dayTimeInMillis = 24 * 60 * 60 * 1000;
+    double currentTimeInMillis =
+      result.toInstant(ZoneOffset.UTC).toEpochMilli() - LocalDateTime.of(result.getYear(), 1, 1, 0, 0).toInstant(ZoneOffset.UTC).toEpochMilli();
+    double l = isLeapYear(result.getYear())
+      ? currentTimeInMillis / (dayTimeInMillis * 366)
+      : currentTimeInMillis / (dayTimeInMillis * 365);
+    System.out.printf("%.9f", l * 100);
+  }
 
-	private static boolean isLeapYear(int year) {
-		return year % 400 == 0 || ((year & 3) == 0 && (year % 100) != 0);
-	}
+  private static boolean isLeapYear(int year) {
+    return year % 400 == 0 || ((year & 3) == 0 && (year % 100) != 0);
+  }
 }
 
 /*

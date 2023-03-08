@@ -9,37 +9,37 @@ import java.io.InputStreamReader;
  */
 public class _1380 {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		int scenario = 1;
-		while (true) {
-			String line = br.readLine();
-			if ("0".equals(line)) {
-				System.out.print(sb);
-				break;
-			}
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    StringBuilder sb = new StringBuilder();
+    int scenario = 1;
+    while (true) {
+      String line = br.readLine();
+      if ("0".equals(line)) {
+        System.out.print(sb);
+        break;
+      }
 
-			int n = Integer.parseInt(line);
-			String[] names = new String[n];
-			for (int i = 0; i < n; i++) {
-				names[i] = br.readLine();
-			}
+      int n = Integer.parseInt(line);
+      String[] names = new String[n];
+      for (int i = 0; i < n; i++) {
+        names[i] = br.readLine();
+      }
 
-			boolean[] visited = new boolean[n];
-			for (int i = 0; i < 2 * n - 1; i++) {
-				int number = Integer.parseInt(br.readLine().split(" ")[0]) - 1;
-				visited[number] = !visited[number];
-			}
+      boolean[] visited = new boolean[n];
+      for (int i = 0; i < 2 * n - 1; i++) {
+        int number = Integer.parseInt(br.readLine().split(" ")[0]) - 1;
+        visited[number] = !visited[number];
+      }
 
-			for (int i = 0; i < visited.length; i++) {
-				if (visited[i]) {
-					sb.append(scenario++).append(" ").append(names[i]).append("\n");
-					break;
-				}
-			}
-		}
-	}
+      for (int i = 0; i < visited.length; i++) {
+        if (visited[i]) {
+          sb.append(scenario++).append(" ").append(names[i]).append("\n");
+          break;
+        }
+      }
+    }
+  }
 }
 
 /*
