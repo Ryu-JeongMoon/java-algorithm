@@ -9,33 +9,33 @@ import java.io.InputStreamReader;
  */
 public class _1010 {
 
-  private static final long[] FACTORIALS = new long[]{
-    1L, 1L, 2L, 6L, 24L, 120L,
-    720L, 5040L, 40320L, 362880L, 3628800L,
-    39916800L, 479001600L, 6227020800L, 87178291200L, 1307674368000L
-  };
+	private static final long[] FACTORIALS = new long[]{
+		1L, 1L, 2L, 6L, 24L, 120L,
+		720L, 5040L, 40320L, 362880L, 3628800L,
+		39916800L, 479001600L, 6227020800L, 87178291200L, 1307674368000L
+	};
 
-  public static void main(String[] args) throws IOException {
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    StringBuilder sb = new StringBuilder();
-    int i = Integer.parseInt(br.readLine());
-    while (--i >= 0) {
-      String[] split = br.readLine().split(" ");
-      int n = Integer.parseInt(split[0]);
-      int m = Integer.parseInt(split[1]);
-      sb.append(calculate(n, m)).append("\n");
-    }
-    System.out.println(sb);
-  }
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		int i = Integer.parseInt(br.readLine());
+		while (--i >= 0) {
+			String[] split = br.readLine().split(" ");
+			int n = Integer.parseInt(split[0]);
+			int m = Integer.parseInt(split[1]);
+			sb.append(calculate(n, m)).append("\n");
+		}
+		System.out.println(sb);
+	}
 
-  private static long calculate(int n, int m) {
-    int max = Math.max(n, m - n), min = Math.min(n, m - n);
-    long numerator = 1;
-    for (int i = max + 1; i <= m; i++) {
-      numerator *= i;
-    }
-    return numerator / FACTORIALS[min];
-  }
+	private static long calculate(int n, int m) {
+		int max = Math.max(n, m - n), min = Math.min(n, m - n);
+		long numerator = 1;
+		for (int i = max + 1; i <= m; i++) {
+			numerator *= i;
+		}
+		return numerator / FACTORIALS[min];
+	}
 }
 
 /*

@@ -8,7 +8,7 @@ public class MergeSort {
   private static int[] tmp;
 
   public static void main(String[] args) {
-    src = new int[] { 4, 7, 9, 5, 3, 1, 533, 212, 4, 6, 64, 63 };
+    src = new int[]{ 4, 7, 9, 5, 3, 1, 533, 212, 4, 6, 64, 63 };
     tmp = new int[src.length];
     System.out.println("Arrays.toString(src) = " + Arrays.toString(src));
 
@@ -34,8 +34,8 @@ public class MergeSort {
         }
       }
 
-			if (end + 1 - start >= 0)
-				System.arraycopy(tmp, start, src, start, end + 1 - start);
+      if (end + 1 - start >= 0)
+        System.arraycopy(tmp, start, src, start, end + 1 - start);
     }
   }
 }

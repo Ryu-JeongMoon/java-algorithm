@@ -9,33 +9,33 @@ import java.io.InputStreamReader;
  */
 public class _1789 {
 
-  public static void main(String[] args) throws IOException {
-    long s = Long.parseLong(new BufferedReader(new InputStreamReader(System.in)).readLine());
-    System.out.println(binarySearch(s));
-  }
+	public static void main(String[] args) throws IOException {
+		long s = Long.parseLong(new BufferedReader(new InputStreamReader(System.in)).readLine());
+		System.out.println(binarySearch(s));
+	}
 
-  private static int sequential(long s) {
-    int count = 1;
-    long number = 1;
-    while (s > 2 * number) {
-      s -= number++;
-      ++count;
-    }
-    return count;
-  }
+	private static int sequential(long s) {
+		int count = 1;
+		long number = 1;
+		while (s > 2 * number) {
+			s -= number++;
+			++count;
+		}
+		return count;
+	}
 
-  private static int binarySearch(long s) {
-    long min = 1, max = s, mid;
-    while (min < max) {
-      mid = (min + max + 1) / 2;
-      if ((mid * (mid + 1) / 2) <= s) {
-        min = mid;
-      } else {
-        max = mid - 1;
-      }
-    }
-    return (int) min;
-  }
+	private static int binarySearch(long s) {
+		long min = 1, max = s, mid;
+		while (min < max) {
+			mid = (min + max + 1) / 2;
+			if ((mid * (mid + 1) / 2) <= s) {
+				min = mid;
+			} else {
+				max = mid - 1;
+			}
+		}
+		return (int) min;
+	}
 }
 
 /*

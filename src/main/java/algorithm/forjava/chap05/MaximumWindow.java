@@ -8,7 +8,7 @@ import java.util.Map;
 public class MaximumWindow {
 
   public static void main(String[] args) {
-    int[] array = new int[] { 1, 3, -1, -3, 5, 3, 6, 7 };
+    int[] array = new int[]{ 1, 3, -1, -3, 5, 3, 6, 7 };
     System.out.println(Arrays.toString(maximum(array, 3)));
   }
 

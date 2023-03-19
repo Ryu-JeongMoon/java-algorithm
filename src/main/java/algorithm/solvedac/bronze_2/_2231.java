@@ -9,23 +9,23 @@ import java.io.InputStreamReader;
  */
 public class _2231 {
 
-	public static void main(String[] args) throws IOException {
-		String input = new BufferedReader(new InputStreamReader(System.in)).readLine();
-		int m = Integer.parseInt(input), constructor = 0, start = Math.max(1, m - input.length() * 9);
-		for (int i = start; i < m; i++) {
-			int value = i, sum = i;
-			while (value > 0) {
-				sum += value % 10;
-				value /= 10;
-			}
+  public static void main(String[] args) throws IOException {
+    String input = new BufferedReader(new InputStreamReader(System.in)).readLine();
+    int m = Integer.parseInt(input), constructor = 0, start = Math.max(1, m - input.length() * 9);
+    for (int i = start; i < m; i++) {
+      int value = i, sum = i;
+      while (value > 0) {
+        sum += value % 10;
+        value /= 10;
+      }
 
-			if (sum == m) {
-				constructor = i;
-				break;
-			}
-		}
-		System.out.println(constructor);
-	}
+      if (sum == m) {
+        constructor = i;
+        break;
+      }
+    }
+    System.out.println(constructor);
+  }
 }
 
 /*

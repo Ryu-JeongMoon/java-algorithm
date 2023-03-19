@@ -20,7 +20,7 @@ public class _2052 {
     if (n < 10) {
       System.out.println(Math.pow(0.5, n));
     } else {
-      System.out.println(new BigDecimal(Math.pow(2, -n)).toPlainString());
+      System.out.println(BigDecimal.valueOf(Math.pow(2, -n)).toPlainString());
     }
   }
 

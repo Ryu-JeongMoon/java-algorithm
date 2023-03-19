@@ -13,7 +13,7 @@ public class RemoveLeastNumber {
 
   public static int[] solution(int[] arr) {
     if (arr.length <= 1) {
-      return new int[] { -1 };
+      return new int[]{ -1 };
     }
 
     final int minValue = Arrays.stream(arr.clone())

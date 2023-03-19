@@ -1,8 +1,7 @@
 package algorithm.forjava.chpa04;
 
-import java.util.EmptyStackException;
-
 import algorithm.forjava.chpa03.LinkedListNode;
+import java.util.EmptyStackException;
 
 public class LinkedListStack {
 

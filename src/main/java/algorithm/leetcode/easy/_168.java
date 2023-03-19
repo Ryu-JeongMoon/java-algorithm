@@ -6,7 +6,7 @@ package algorithm.leetcode.easy;
 public class _168 {
 
   private static final int ALPHABET_SIZE = 26;
-  private static final String[] ALPHABETS = new String[] {
+  private static final String[] ALPHABETS = new String[]{
     "NOTHING", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
   };
 

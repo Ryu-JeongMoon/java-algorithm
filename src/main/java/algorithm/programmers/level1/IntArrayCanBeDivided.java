@@ -23,7 +23,7 @@ public class IntArrayCanBeDivided {
     Collections.sort(integers);
 
     if (integers.size() == 0) {
-      return new int[] { -1 };
+      return new int[]{ -1 };
     }
 
     int[] ints = new int[integers.size()];
