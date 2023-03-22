@@ -9,18 +9,18 @@ import java.io.InputStreamReader;
  */
 public class _2810 {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine()), count = 1, index = 0;
-		String seat = br.readLine();
-		while (index < seat.length()) {
-			if (seat.charAt(index++) == 'L') {
-				++index;
-			}
-			++count;
-		}
-		System.out.println(Math.min(count, n));
-	}
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine()), count = 1, index = 0;
+    String seat = br.readLine();
+    while (index < seat.length()) {
+      if (seat.charAt(index++) == 'L') {
+        ++index;
+      }
+      ++count;
+    }
+    System.out.println(Math.min(count, n));
+  }
 }
 
 /*
