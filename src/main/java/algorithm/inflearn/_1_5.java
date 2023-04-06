@@ -14,20 +14,15 @@ public class _1_5 {
 
   public static int solution(int[] nums) {
     int[] peaks = new int[nums.length];
+    boolean existsPeak = false;
     for (int i = 1; i < nums.length - 1; i++) {
       if (nums[i - 1] < nums[i] && nums[i] > nums[i + 1]) {
         peaks[i] = i;
+        existsPeak = true;
       }
     }
 
-    int peakCount = 0;
-    for (int peak : peaks) {
-      if (peak != 0) {
-        ++peakCount;
-        break;
-      }
-    }
-    if (peakCount == 0) {
+    if (!existsPeak) {
       return 0;
     }
 
@@ -38,7 +33,7 @@ public class _1_5 {
       }
 
       int length = 3, left = peak - 1, right = peak + 1;
-      int count = Math.max(nums.length - left, nums.length - right);
+      int count = Math.max(left + 1, nums.length - right);
       boolean leftFinished = false, rightFinished = false;
       while (--count >= 0) {
         if (left > 0 && nums[left] > nums[left - 1]) {
