@@ -89,7 +89,7 @@ public class _1_6 {
     canExchanged[i] = true;
     for (int j = 0; j < fruit[i].length; j++) {
       // it can't be exchanged, otherwise minimumValue + 1 should be less than other values
-      // minimumValue + 1 can be equal to other values, for example (1,2,2) -> (1+1,2,2)
+      // minimumValue + 1 can be equal to other values, for example (1,2,3) -> (1+1,2,3-1) -> (2,2,2)
       // so equal case should not be filtered out
       if (j != minimumIndex && fruit[i][j] < fruit[i][minimumIndex] + 1) {
         canExchanged[i] = false;
