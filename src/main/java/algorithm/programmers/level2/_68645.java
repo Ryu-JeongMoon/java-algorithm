@@ -18,10 +18,6 @@ public class _68645 {
   }
 
   public static int[] solution(int n) {
-    if (n == 1) {
-      return new int[] { 1 };
-    }
-
     int[][] map = new int[n][n];
     int total = n * (n + 1) / 2;
     int x = 0, y = 0, direction = 0;
@@ -31,7 +27,7 @@ public class _68645 {
 
       int newX = x + ROW[direction];
       int newY = y + COL[direction];
-      while (isOutOfMap(n, x, newX, newY) || (map[newX][newY] != 0 && i != total - 1)) {
+      while (i != total - 1 && (isOutOfMap(n, x, newX, newY) || (map[newX][newY] != 0))) {
         direction = (direction + 1) % 3;
         newX = x + ROW[direction];
         newY = y + COL[direction];
@@ -70,8 +66,9 @@ while (isOutOfMap(n, x, newX, newY) || (map[newX][newY] != 0 && i != total - 1))
 2. 주어진 범위 안에 있더라도 값이 이미 존재하는지
 3. 마지막에는 사방에 값이 이미 존재하므로 스킵해야 함
 
-if(n == 1)
-범위값에 대해 예외처리를 별도로 하기보다 통합해서 처리할 수 있는지 고민해볼것
+1. while (isOutOfMap(n, x, newX, newY) || (map[newX][newY] != 0 && i != total - 1))
+2. while (i != total - 1 && (isOutOfMap(n, x, newX, newY) || (map[newX][newY] != 0)))
+i != total - 1 조건을 별도로 빼어 n == 1에 대한 예외 처리를 하지 않아도 됨
 
 reference
 https://programmers.co.kr/learn/courses/30/lessons/68645

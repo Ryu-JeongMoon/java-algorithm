@@ -45,7 +45,7 @@ public class _87377 {
     }
 
     for (long[] intersection : intersections) {
-      map[(int) Math.abs(maxY - intersection[1])][(int) Math.abs(minX - intersection[0])] = '*';
+      map[(int) (maxY - intersection[1])][(int) (intersection[0] - minX)] = '*';
     }
 
     String[] answer = new String[map.length];
@@ -66,7 +66,12 @@ map[(int) Math.abs(maxY - intersection[1])][(int) Math.abs(intersection[0] - min
 좌표평면의 y축 가장 높은 값을 0으로 옮겨야하기 때문에 maxY - y
 좌표평면의 x축 가장 낮은 값을 0으로 옮겨야하기 때문에 minX - x
 
-if (a * d == b * c) 조건 체크에서 a*d, b*c가 int 범위를 넘어가는 경우가 있을 수 있으므로 long cast
+if (Math.floor(x) == x && Math.floor(y) == y)
+정수 좌표만 표시
+
+Ax + By + C = 0
+A, B, C는 -100,000 이상 100,000 이하인 정수
+교점이 Integer 범위를 벗어나는 경우가 있을 수 있으므로 double 계산 & long cast
 
 reference
 https://programmers.co.kr/learn/courses/30/lessons/87377

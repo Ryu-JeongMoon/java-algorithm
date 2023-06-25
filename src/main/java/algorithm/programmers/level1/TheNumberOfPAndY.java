@@ -3,30 +3,20 @@ package algorithm.programmers.level1;
 public class TheNumberOfPAndY {
 
   public static void main(String[] args) {
-
     System.out.println(solution("pPoooyY"));
+    System.out.println(solution("Pyy"));
   }
 
   static boolean solution(String s) {
-    boolean answer = true;
-
-    char[] chars = s.toLowerCase().toCharArray();
-
-    int countOfP = 0;
-    int countOfY = 0;
-
-    for (char character : chars) {
-      if (character == 'p') {
-        countOfP++;
-      } else if (character == 'y') {
-        countOfY++;
+    int count = 0;
+    String lowerCased = s.toLowerCase();
+    for (int i = 0; i < lowerCased.length(); i++) {
+      if (lowerCased.charAt(i) == 'p') {
+        ++count;
+      } else if (lowerCased.charAt(i) == 'y') {
+        --count;
       }
     }
-
-    if (countOfP != countOfY) {
-      answer = false;
-    }
-
-    return answer;
+    return count == 0;
   }
 }

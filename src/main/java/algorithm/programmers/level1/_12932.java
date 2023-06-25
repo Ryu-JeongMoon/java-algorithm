@@ -13,8 +13,7 @@ public class _12932 {
   }
 
   public int[] solution(long number) {
-    return new StringBuilder()
-      .append(number)
+    return new StringBuilder(Long.toString(number))
       .reverse()
       .chars()
       .map(Character::getNumericValue)
