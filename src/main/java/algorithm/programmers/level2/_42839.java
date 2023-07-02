@@ -17,14 +17,7 @@ public class _42839 {
 
   public int solution(String numbers) {
     Set<String> strings = new HashSet<>();
-    boolean[] visited = new boolean[numbers.length()];
-    for (int i = 0; i < numbers.length(); i++) {
-      visited[i] = true;
-      String firstLetter = String.valueOf(numbers.charAt(i));
-      strings.add(firstLetter);
-      visit(numbers, strings, visited, firstLetter);
-      visited[i] = false;
-    }
+    visit(numbers, strings, new boolean[numbers.length()], "");
 
     Set<Integer> primes = new HashSet<>();
     for (String s : strings) {
