@@ -31,8 +31,10 @@ public class _68644 {
 
 /*
 time complexity
+O(N^2 * logN)
 
 critical point
+중복 제거 & 오름차순 정렬을 위해 TreeSet 사용
 
 reference
 https://programmers.co.kr/learn/courses/30/lessons/68644
