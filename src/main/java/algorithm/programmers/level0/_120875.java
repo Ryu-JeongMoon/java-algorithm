@@ -28,7 +28,7 @@ O(1)
 
 critical point
 1. 두 점이 주어질 때 기울기 판단
-2. HashSet<Double>은
+2. HashSet<Double>은 정확도 문제로 사용 불가능
 
 reference
 https://programmers.co.kr/learn/courses/30/lessons/120875
