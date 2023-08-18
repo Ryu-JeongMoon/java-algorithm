@@ -25,7 +25,7 @@ public class _4158 {
           elements.add(value);
         }
       }
-      io.writeln(count);
+      io.writelnInt(count);
 
       n = io.nextInt();
       m = io.nextInt();

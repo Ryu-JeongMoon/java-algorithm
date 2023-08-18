@@ -112,12 +112,39 @@ public class FastIO {
     }
   }
 
-  public void writeln(int i) {
-    write(i);
+  public void writelnInt(int i) {
+    writeInt(i);
     writeBuffer((byte) '\n');
   }
 
-  public void write(int i) {
+  public void writeInt(int i) {
+    if (i == 0) {
+      writeBuffer((byte) '0');
+      return;
+    }
+
+    if (i < 0) {
+      writeBuffer((byte) '-');
+      i = -i;
+    }
+
+    int index = 0;
+    while (i > 0) {
+      bytebuffer[index++] = (byte) ((i % 10) + '0');
+      i /= 10;
+    }
+
+    while (index-- > 0) {
+      writeBuffer(bytebuffer[index]);
+    }
+  }
+
+  public void writelnLong(int i) {
+    writeLong(i);
+    writeBuffer((byte) '\n');
+  }
+
+  public void writeLong(long i) {
     if (i == 0) {
       writeBuffer((byte) '0');
       return;
@@ -154,6 +181,11 @@ public class FastIO {
       }
     }
     outBufferPointer = 0;
+  }
+
+  public void flushAndClose() throws IOException {
+    flushBuffer();
+    close();
   }
 
   public void close() throws IOException {
