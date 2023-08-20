@@ -166,7 +166,7 @@ public class FastIO {
     }
   }
 
-  private void writeBuffer(byte b) {
+  public void writeBuffer(byte b) {
     if (outBufferPointer == outBuffer.length) {
       flushBuffer();
     }
