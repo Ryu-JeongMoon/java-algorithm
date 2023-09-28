@@ -1,5 +1,7 @@
 package algorithm.solvedac.silver_3;
 
+import static algorithm.util.PrimeUtils.*;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,15 +46,6 @@ public class _2312 {
       }
     }
     io.flushAndClose();
-  }
-
-  private static boolean isPrime(int i) {
-    for (int j = 3; j < (int) (Math.sqrt(i) + 1); j += 2) {
-      if (i % j == 0) {
-        return false;
-      }
-    }
-    return i > 1;
   }
 }
 

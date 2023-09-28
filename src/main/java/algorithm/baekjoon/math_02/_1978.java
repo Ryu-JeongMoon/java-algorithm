@@ -1,8 +1,9 @@
 package algorithm.baekjoon.math_02;
 
-import java.io.BufferedReader;
+import static algorithm.util.PrimeUtils.*;
+import static algorithm.util.SimpleIntReader.*;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 /**
  * 소수 찾기
@@ -10,37 +11,24 @@ import java.io.InputStreamReader;
 public class _1978 {
 
   public static void main(String[] args) throws IOException {
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    br.readLine();
-
-    int countOfPrimes = 0;
-    String[] numbers = br.readLine().split(" ");
-    for (String number : numbers) {
-      if (isPrime(number)) {
-        countOfPrimes++;
+    int t = nextInt(), count = 0;
+    for (int i = 0; i < t; i++) {
+      int input = nextInt();
+      if (input == 2 || (input % 2 != 0 && isPrime(input))) {
+        ++count;
       }
     }
-    System.out.println(countOfPrimes);
-  }
-
-  /* number 까지 루프 돌릴 필요 없다 */
-  private static boolean isPrime(String str) {
-    int number = Integer.parseInt(str);
-    if (number <= 1)
-      return false;
-
-    int i = 1;
-    while (i++ < (int) Math.sqrt(number)) {
-      if (number % i == 0) {
-        return false;
-      }
-    }
-
-    return true;
+    System.out.println(count);
   }
 }
 
 /*
-4
-1 3 5 7
- */
+time complexity
+O(N * sqrt(N))
+
+critical point
+2는 예외
+
+reference
+https://www.acmicpc.net/problem/1978
+*/

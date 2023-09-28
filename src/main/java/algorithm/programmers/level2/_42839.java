@@ -1,5 +1,7 @@
 package algorithm.programmers.level2;
 
+import static algorithm.util.PrimeUtils.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -43,17 +45,6 @@ public class _42839 {
         visited[i] = false;
       }
     }
-  }
-
-  // even numbers don't need to be checked, so start from 3 and increase by 2
-  // zero and one are not prime numbers, so check it is greater than 1
-  private boolean isPrime(int n) {
-    for (int i = 3; i < (int) (Math.sqrt(n) + 1); i += 2) {
-      if (n % i == 0) {
-        return false;
-      }
-    }
-    return n > 1;
   }
 }
 
