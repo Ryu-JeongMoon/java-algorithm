@@ -166,6 +166,12 @@ public class FastIO {
     }
   }
 
+  public void writeln(String s) {
+    for (byte b : s.getBytes()) {
+      writeBuffer(b);
+    }
+  }
+
   public void writeBuffer(byte b) {
     if (outBufferPointer == outBuffer.length) {
       flushBuffer();
