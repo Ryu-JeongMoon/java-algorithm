@@ -98,7 +98,7 @@ public class FastIO {
     return neg ? -ret : ret;
   }
 
-  private byte read() throws IOException {
+  public byte read() throws IOException {
     if (inBufferPointer == bytesRead) {
       fillBuffer();
     }
