@@ -41,21 +41,16 @@ public class FastIO {
     return new String(buf, 0, cnt);
   }
 
-  public int nextInt() throws IOException {
-    int ret = 0;
-    byte c = read();
-    while (c <= ' ') {
-      c = read();
+  public String readString() throws IOException {
+    byte[] buf = new byte[64];
+    int cnt = 0, c;
+    while ((c = read()) != ' ') {
+      buf[cnt++] = (byte) c;
     }
-
-    do {
-      ret = ret * 10 + c - '0';
-    } while ((c = read()) >= '0' && c <= '9');
-    return ret;
+    return new String(buf, 0, cnt);
   }
 
-  public long nextLong() throws IOException {
-    long ret = 0;
+  public int nextInt() throws IOException {
     byte c = read();
     while (c <= ' ') {
       c = read();
@@ -66,6 +61,26 @@ public class FastIO {
       c = read();
     }
 
+    int ret = 0;
+    do {
+      ret = ret * 10 + c - '0';
+    } while ((c = read()) >= '0' && c <= '9');
+
+    return neg ? -ret : ret;
+  }
+
+  public long nextLong() throws IOException {
+    byte c = read();
+    while (c <= ' ') {
+      c = read();
+    }
+
+    boolean neg = (c == '-');
+    if (neg) {
+      c = read();
+    }
+
+    long ret = 0;
     do {
       ret = ret * 10 + c - '0';
     } while ((c = read()) >= '0' && c <= '9');
@@ -170,6 +185,7 @@ public class FastIO {
     for (byte b : s.getBytes()) {
       writeBuffer(b);
     }
+    writeBuffer((byte) '\n');
   }
 
   public void writeBuffer(byte b) {
