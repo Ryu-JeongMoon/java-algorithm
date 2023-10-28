@@ -19,12 +19,13 @@ public class _2003 {
 
     int count = 0, previousIndex = 0;
     long sum = 0;
-    for (int i = 0; i < array.length; i++) {
-      sum += array[i];
+    for (int value : array) {
+      sum += value;
+      while (sum > target) {
+        sum -= array[previousIndex++];
+      }
       if (sum == target) {
         ++count;
-      } else if (sum > target) {
-        sum -= (array[i--] + array[previousIndex++]);
       }
     }
     io.writeInt(count);
@@ -37,12 +38,7 @@ time complexity
 O(N)
 
 critical point
-2중 순회 하지 않고 더한 값의 맨 앞 자리와 현재 순서의 더한 값을 빼주고
-인덱스를 하나 감소 시켜 동일한 로직을 탈 수 있도록 함
-
-1 2 3 4
-4까지 더했을 때 sum > target 인 경우
-sum에서 1, 4를 빼주고 인덱스도 줄여 sum에 4를 더하는 로직부터 다시 시작
+sum에 현재 값을 더한 후 target보다 크면 이전 값을 빼면서 target과 같아지거나 작아질 때까지 반복
 
 reference
 https://www.acmicpc.net/problem/2003
