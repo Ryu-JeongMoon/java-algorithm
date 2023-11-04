@@ -195,6 +195,12 @@ public class FastIO {
     outBuffer[outBufferPointer++] = b;
   }
 
+  public void writeBuffer(byte[] buffers) {
+    for (byte buffer : buffers) {
+      writeBuffer(buffer);
+    }
+  }
+
   public void flushBuffer() {
     if (outBufferPointer != 0) {
       try {

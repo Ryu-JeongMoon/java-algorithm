@@ -11,7 +11,7 @@ public class _15649_2 {
 
   private static FastIO io;
   private static int total, target;
-  private static char[] buffer;
+  private static byte[] buffer;
   private static boolean[] visited;
 
   public static void main(String[] args) throws IOException {
@@ -20,7 +20,7 @@ public class _15649_2 {
     target = io.nextInt();
 
     visited = new boolean[total];
-    buffer = new char[target * 2];
+    buffer = new byte[target * 2];
     buffer[buffer.length - 1] = '\n';
     for (int i = 1; i < buffer.length - 1; i += 2) {
       buffer[i] = ' ';
@@ -32,16 +32,14 @@ public class _15649_2 {
 
   private static void dfs(int current) {
     if (current == target) {
-      for (char b : buffer) {
-        io.writeBuffer((byte) b);
-      }
+      io.writeBuffer(buffer);
       return;
     }
 
     for (int i = 0; i < total; i++) {
       if (!visited[i]) {
         visited[i] = true;
-        buffer[current * 2] = (char) (i + 1 + '0');
+        buffer[current * 2] = (byte) (i + 1 + '0');
         dfs(current + 1);
         visited[i] = false;
       }
