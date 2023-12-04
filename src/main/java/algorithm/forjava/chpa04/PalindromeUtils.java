@@ -5,31 +5,24 @@ import java.util.Stack;
 /**
  * 문제 8
  */
-public class Palindrome {
+public class PalindromeUtils {
 
   public static void main(String[] args) {
     System.out.println(isPalindrome("ababaXababa"));
     System.out.println(isPalindromeByStack("cdaababaXababaadc"));
   }
 
-  static boolean isPalindrome(String input) {
-    char[] chars = input.toCharArray();
-    int i = 0, j = chars.length - 1;
-
-    while (i < j && chars[i++] == chars[j--]) {
-      System.out.printf("working %d %d\n", i, j);
+  public static boolean isPalindrome(String input) {
+    int start = 0, end = input.length() - 1;
+    while (start <= end) {
+      if (input.charAt(start++) != input.charAt(end--)) {
+        return false;
+      }
     }
-
-    if (i < j) {
-      System.out.println("Not a Palindrome");
-      return false;
-    } else {
-      System.out.println("Palindrome");
-      return true;
-    }
+    return true;
   }
 
-  static boolean isPalindromeByStack(String input) {
+  public static boolean isPalindromeByStack(String input) {
     char[] chars = input.toCharArray();
     int i = 0, j = (chars.length - 1) / 2;
     Stack<Character> stack = new Stack<>();
