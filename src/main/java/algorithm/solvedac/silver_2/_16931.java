@@ -55,5 +55,5 @@ critical point
 높이 차이를 구할 땐 (최댓값, 현재값) 중 작은 값으로 계산해줘야 함
 
 reference
-https://www.acmicpc.net/problem/
+https://www.acmicpc.net/problem/16931
 */
