@@ -1,5 +1,7 @@
 package algorithm.solvedac.bronze_3;
 
+import static algorithm.util.SimpleIntReader.nextInt;
+
 import java.io.IOException;
 
 /**
@@ -16,14 +18,6 @@ public class _14720 {
       }
     }
     System.out.println(count);
-  }
-
-  private static int nextInt() throws IOException {
-    int sum = 0, input;
-    while ((input = System.in.read()) >= '0') {
-      sum = sum * 10 + input - '0';
-    }
-    return sum;
   }
 }
 
