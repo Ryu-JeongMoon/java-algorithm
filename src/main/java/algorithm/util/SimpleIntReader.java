@@ -26,4 +26,28 @@ public class SimpleIntReader {
       }
     }
   }
+
+  public static long nextLong() throws IOException {
+    long sum = 0;
+    int input;
+    while ((input = System.in.read()) >= '0') {
+      sum = (sum * 10) + (input - '0');
+    }
+    return sum;
+  }
+
+  public static long nextLongWithNegative() throws IOException {
+    long sum = 0;
+    boolean isNegative = false;
+    while (true) {
+      int input = System.in.read();
+      if (input == '-') {
+        isNegative = true;
+      } else if (input == '\n' || input == ' ') {
+        return isNegative ? -sum : sum;
+      } else {
+        sum = (sum * 10) + (input - '0');
+      }
+    }
+  }
 }
