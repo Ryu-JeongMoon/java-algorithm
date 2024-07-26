@@ -60,6 +60,8 @@ time complexity
 O(N * numRows)
 
 critical point
+125ms, Beats 5.02%
+
 Example 1:
 Input: s = "PAYPALISHIRING", numRows = 3
 Output: "PAHNAPLSIIGYIR"
