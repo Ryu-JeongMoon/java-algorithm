@@ -3,10 +3,10 @@ package algorithm.leetcode.easy;
 /**
  * Palindrome Number
  */
-public class _9 {
+public class _9_2 {
 
   public static void main(String[] args) {
-    _9 instance = new _9();
+    _9_2 instance = new _9_2();
 
     System.out.println(instance.isPalindrome(121));
     System.out.println(instance.isPalindrome(-121));
@@ -19,12 +19,25 @@ public class _9 {
   }
 
   public boolean isPalindrome(int x) {
-    String number = String.valueOf(x);
-    int length = number.length();
-    for (int i = 0; i < length; i++) {
-      if (number.charAt(i) != number.charAt(length - 1 - i)) {
+    if (x < 0) {
+      return false;
+    }
+
+    int digitPlace = -1, copied = x;
+    while (copied != 0) {
+      copied /= 10;
+      ++digitPlace;
+    }
+
+    int leftDelimiter = (int) Math.pow(10, digitPlace), rightDelimiter = 10;
+    while (leftDelimiter >= rightDelimiter) {
+      int leftMost = x / leftDelimiter;
+      int rightMost = x % rightDelimiter;
+      if (leftMost != rightMost) {
         return false;
       }
+      x = (x % leftDelimiter) / rightDelimiter;
+      leftDelimiter /= 100;
     }
     return true;
   }
@@ -35,7 +48,7 @@ time complexity
 O(x.length)
 
 critical point
-6ms, Beats 33.92%
+5ms, Beats 71.53%
 
 reference
 https://leetcode.com/problems/palindrome-number/
